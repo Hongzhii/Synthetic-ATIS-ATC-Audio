@@ -36,7 +36,8 @@ fi
 # 2. Install Python dependencies
 if [ -f requirements.txt ]; then
   echo "Installing Python dependencies..."
-  pip install -r requirements.txt
+  pip install uv
+  uv pip install -r requirements.txt
 else
   echo "requirements.txt not found!"
 fi
