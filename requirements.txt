@@ -1,6 +1,5 @@
 numpy
 pydub
-audioop-lts
 tqdm
 openai-whisper
 # For Gemini API (Google Generative AI)

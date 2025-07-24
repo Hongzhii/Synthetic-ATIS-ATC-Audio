@@ -1,5 +1,7 @@
 # ATIS Whisper Synthetic Data Generator
 
+> **Python Version Requirement:** This project supports only Python versions >=3.6 and <3.10. Please ensure your Python environment meets this requirement.
+
 > **Note:** This repository has only been tested in Linux and macOS environments. Windows support has not been tested yet.
 
 ## Motivation
