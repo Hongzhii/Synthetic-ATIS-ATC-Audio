@@ -1,0 +1,6 @@
+numpy
+pydub
+tqdm
+openai-whisper
+# For Gemini API (Google Generative AI)
+google-generativeai

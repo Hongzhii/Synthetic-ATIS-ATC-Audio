@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+data/
+data_no_gemini/
+dectalk/
+.vscode/
