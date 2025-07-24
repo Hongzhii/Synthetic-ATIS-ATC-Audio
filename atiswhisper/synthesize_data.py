@@ -1,6 +1,7 @@
 import os
 import random
 import re
+import subprocess
 
 LOCATIONS = [
     "La Guardia",
@@ -175,3 +176,16 @@ def synthesize_transcripts(output_dir: str, samples: int) -> None:
 
         with open(os.path.join(transcript_dir, f"{i}.txt"), "w") as f:
             f.write(transcript)
+
+def generate_srt_with_whisper(audio_dir, srt_dir):
+    os.makedirs(srt_dir, exist_ok=True)
+    audio_files = [f for f in os.listdir(audio_dir) if f.endswith('.wav')]
+    for audio_file in audio_files:
+        audio_path = os.path.join(audio_dir, audio_file)
+        # Call OpenAI Whisper CLI to generate SRT
+        subprocess.run([
+            "whisper", audio_path,
+            "--model", "medium.en",
+            "--output_format", "srt",
+            "--output_dir", srt_dir
+        ], check=True)

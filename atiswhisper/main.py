@@ -3,21 +3,9 @@ import os
 from atiswhisper.gemini_api import correct_srts
 from atiswhisper.synthesize_data import synthesize_transcripts
 from atiswhisper.noise import add_noise_to_audio_dir
+from atiswhisper.synthesize_data import generate_srt_with_whisper
 import subprocess
 import google.generativeai as genai
-
-def generate_srt_with_whisper(audio_dir, srt_dir):
-    os.makedirs(srt_dir, exist_ok=True)
-    audio_files = [f for f in os.listdir(audio_dir) if f.endswith('.wav')]
-    for audio_file in audio_files:
-        audio_path = os.path.join(audio_dir, audio_file)
-        # Call OpenAI Whisper CLI to generate SRT
-        subprocess.run([
-            "whisper", audio_path,
-            "--model", "medium.en",
-            "--output_format", "srt",
-            "--output_dir", srt_dir
-        ], check=True)
 
 def main():
     parser = argparse.ArgumentParser(description="ATIS Data Pipeline")
