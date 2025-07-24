@@ -44,7 +44,7 @@ fi
 # 3. Build DECtalk if not present
 if [ ! -d "dectalk" ]; then
   echo "DECtalk not found. Running dec_talk_install.sh..."
-  bash dec_talk_install.sh
+  bash scripts/dec_talk_install.sh
 else
   echo "DECtalk directory already exists. Skipping build."
 fi
