@@ -187,5 +187,6 @@ def generate_srt_with_whisper(audio_dir, srt_dir):
             "whisper", audio_path,
             "--model", "medium.en",
             "--output_format", "srt",
-            "--output_dir", srt_dir
+            "--output_dir", srt_dir,
+	    "--language", "english",
         ], check=True)
