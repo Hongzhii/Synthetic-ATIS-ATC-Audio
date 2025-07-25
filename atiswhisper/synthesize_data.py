@@ -90,7 +90,7 @@ def generate_synthetic_atis_transcript() -> str:
         condition_1 = random.choice(CLOUD_CONDITIONS)
         condition_2 = random.choice(CLOUD_CONDITIONS)
         
-        template += f"{condition_1} at {level_1},000. {level_2},000 {condition_2}."
+        template += f" {condition_1} at {level_1},000. {level_2},000 {condition_2}."
 
     temperature = f"{random.randint(-20, 35)}"
     dew_point = f"{random.randint(int(temperature)-15, int(temperature))}"
